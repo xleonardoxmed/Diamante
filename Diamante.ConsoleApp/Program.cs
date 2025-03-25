@@ -7,29 +7,39 @@
             while (true)
             {
                 Console.Clear();
-                Console.WriteLine("==========================================================");
+                Console.WriteLine("===========================================================================");
                 Console.WriteLine("A pressão determina se um carvão se tornará diamente");
-                Console.WriteLine("==========================================================");
+                Console.WriteLine("===========================================================================");
                 bool success;
                 int centerNumber = 0;
 
                 do
                 {
-                    Console.WriteLine("Insira o número ÍMPAR de letras 'x' que irá compor o centro da jóia: ");
+                    Console.Write("Insira um número ÍMPAR de letras 'x' que irá compor o centro da jóia: ");
                     string entry = Console.ReadLine()!;
                     success = int.TryParse(entry, out centerNumber);
 
-                    if (!success || centerNumber % 2 == 0 || centerNumber <= 0)
+                    if (centerNumber == 1)
                     {
-                        Console.WriteLine("------------------------------------------------------");
-                        Console.WriteLine("Erro! Insira somente números ÍMPARES e INTEIROS.");
-                        Console.WriteLine("------------------------------------------------------");
+                        Console.WriteLine("-------------------------------------------------------------------");
+                        Console.WriteLine("x");
+                        Console.WriteLine("\nEssa jóia ficou muito pequena... tente um número maior!");
+                        Console.WriteLine("-------------------------------------------------------------------");
                         continue;
                     }
-                           
-                } while(!success || centerNumber % 2 == 0 || centerNumber <= 0);
 
-                Console.WriteLine("Deseja criar um novo diamante? (S/N)");
+                    if (!success || centerNumber % 2 == 0 || centerNumber <= 0)
+                    {
+                        Console.WriteLine("-------------------------------------------------------------------");
+                        Console.Write("Erro! Digite um número ÍMPAR e INTEIRO.");
+                        Console.WriteLine("\n-------------------------------------------------------------------");
+                        continue;
+                    }
+                } while (!success || centerNumber % 2 == 0 || centerNumber <= 0 || centerNumber == 1);
+
+                Console.WriteLine("===========================================================================");
+                Console.Write("Deseja criar um novo diamante? (S/N): ");
+                Console.WriteLine("\n===========================================================================");
                 string toContinue = Console.ReadLine()!.ToUpper();
                 if (toContinue != "S")
                     break;
