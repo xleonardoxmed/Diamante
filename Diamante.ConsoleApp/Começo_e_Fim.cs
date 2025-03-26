@@ -23,6 +23,7 @@ namespace Diamante.ConsoleApp
                 Console.Write("Deseja criar um novo diamante? (S/N): ");
                 Console.WriteLine("\n===========================================================================");
                 string toContinue = Console.ReadLine()!.ToUpper();
+
                 if (toContinue == "S")
                 {
                     return true;

@@ -11,7 +11,7 @@ namespace Diamante.ConsoleApp
     public class Validação
     {
         public static int centerNumber;
-        public static bool  success;
+        public static bool success;
         public static int EntryValidation()
         {
             do
@@ -39,7 +39,7 @@ namespace Diamante.ConsoleApp
             } while (!success || centerNumber % 2 == 0 || centerNumber <= 0 || centerNumber == 1);
             return centerNumber;
         }
-        
+
 
     }
 }

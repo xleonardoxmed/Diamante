@@ -9,7 +9,7 @@ namespace Diamante.ConsoleApp
     class DiamondGenerators
     {
         public static int[] mainArray, secundaryArray;
-        
+
         public static void ArraysGenerator()
         {
             mainArray = Enumerable.Range(1, Validação.centerNumber).Where(n => n % 2 != 0).ToArray();

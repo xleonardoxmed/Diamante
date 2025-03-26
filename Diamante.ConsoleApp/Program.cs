@@ -18,7 +18,7 @@ namespace Diamante.ConsoleApp
                     break;
             }
         }
-                
+
     }
 }
 
