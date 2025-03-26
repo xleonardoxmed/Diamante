@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Diamante.ConsoleApp
 {
-    class DiamondGenerators
+    class GeradoresDoDiamante
     {
         public static int[] mainArray, secundaryArray;
 

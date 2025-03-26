@@ -12,8 +12,8 @@ namespace Diamante.ConsoleApp
             {
                 Começo_e_Fim.ShowMenu();
                 Validação.EntryValidation();
-                DiamondGenerators.ArraysGenerator();
-                DiamondGenerators.DiamondCreator();
+                GeradoresDoDiamante.ArraysGenerator();
+                GeradoresDoDiamante.DiamondCreator();
                 if (!Começo_e_Fim.Restart())
                     break;
             }
