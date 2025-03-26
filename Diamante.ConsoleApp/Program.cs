@@ -1,4 +1,8 @@
-﻿namespace Diamante.ConsoleApp
+﻿using System;
+using System.Diagnostics.Metrics;
+using System.Reflection.Metadata;
+
+namespace Diamante.ConsoleApp
 {
     internal class Program
     {
@@ -11,7 +15,7 @@
                 Console.WriteLine("A pressão determina se um carvão se tornará diamente");
                 Console.WriteLine("===========================================================================");
                 bool success;
-                int centerNumber = 0;
+                int centerNumber;
 
                 do
                 {
@@ -37,10 +41,25 @@
                     }
                 } while (!success || centerNumber % 2 == 0 || centerNumber <= 0 || centerNumber == 1);
 
-                Console.WriteLine("===========================================================================");
+                int[] MainArray = Enumerable.Range(1, centerNumber).Where(n => n % 2 != 0).ToArray();
+                int[] SecundaryArray = MainArray.Reverse().Skip(1).ToArray();
+                Console.WriteLine("\n");
+
+                foreach (int num in MainArray)
+                {
+                    Console.WriteLine(new String(' ', (centerNumber - num) / 2) + new string('X', num));
+                }
+
+                foreach (int num in SecundaryArray)
+                {
+                    Console.WriteLine(new String(' ', (centerNumber - num) / 2) + new string('X', num));
+                }
+               
+                Console.WriteLine("\n===========================================================================");
                 Console.Write("Deseja criar um novo diamante? (S/N): ");
                 Console.WriteLine("\n===========================================================================");
                 string toContinue = Console.ReadLine()!.ToUpper();
+
                 if (toContinue != "S")
                     break;
             }
